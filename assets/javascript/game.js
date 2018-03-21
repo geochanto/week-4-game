@@ -24,6 +24,7 @@ function getRndNumber(minRandom, maxRandom) {
 function startGame() {
     //reset total score to zero
     totalScore = 0;
+    currentCrystalValue = '?';
 
     //randomize random number on each game start & display in div
     randomNumber = getRndNumber(minRandom, maxRandom);
@@ -32,6 +33,7 @@ function startGame() {
     //attach random crystal number to each crystal divs 
     $(".crystal").each(function(){
         $(this).attr("data-value",getRndCrystal(minCrystal, maxCrystal));
+        $(this).html(currentCrystalValue);
     });
 }
 
@@ -39,6 +41,8 @@ function startGame() {
 $('.crystal').click(function() {
     //get the value of currently clicked crystal
     currentCrystalValue = parseInt($(this).attr('data-value'));
+    
+    $(this).html(currentCrystalValue);
 
     //calculate current total score
     totalScore += currentCrystalValue;
