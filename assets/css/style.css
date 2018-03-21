@@ -1,7 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../images/diamond_upholstery.png');
+    position: relative;
+}
+
+
+
+#wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+p {
+    margin: 0 0 10px 0;
+    font-family: Serif;
+}
+
+h1 {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+#info {
+    padding-bottom: 20px;
+    border-bottom: 3px dotted #000;
+    margin-bottom: 20px;
+
+}
+
+#random-num, #score {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#wrap-crystal {
+    display: table;
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
 .crystal {
-    border: 3px solid red;
-    width: 50px; 
-    height: 50px;
+    width: 200px; 
+    max-width: 25%;
+    height: 200px;
+    display: table-cell;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.crystal:hover {
+    cursor: pointer; 
+}
+
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  @keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  .hvr-pulse {
     display: inline-block;
-    margin: 3px;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+  }
+  .hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+    -webkit-animation-name: hvr-pulse;
+    animation-name: hvr-pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+
+.crystal>div {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.crystal p {
+    text-align: center;
+    margin: 0 auto;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    text-shadow: 0px 1px 1px #000;
+    position: relative;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+99&0.6+0,0.6+29,0+30 */
+background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 29%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 99%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 29%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 99%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 29%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#crystal-1 {
+    background-image: url('../images/red.png');
+}
+
+#crystal-2 {
+    background-image: url('../images/blue.png');
+}
+
+#crystal-3 {
+    background-image: url('../images/green.png');
+}
+
+#crystal-4 {
+    background-image: url('../images/purple.png');
+}
+
+#wins, #losses {
+    font-weight: bold; 
+    font-size: 20px;   
+}
+
+#wins {
+    color: green;
+}
+
+#losses {
+    color: red;
+}
+
+@media all and (max-width: 640px) {
+    .crystal {
+        height: 100px;
+    }
 }
